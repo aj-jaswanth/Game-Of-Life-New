@@ -2,6 +2,7 @@ import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 public class CellTest {
@@ -23,5 +24,13 @@ public class CellTest {
         boolean actualState = cell.isAlive();
 
         assertThat(actualState, is(equalTo(false)));
+    }
+
+    @Test
+    public void twoCellsAreEqualIfTheirCoordinatesAreSame() {
+        Cell firstCell = new Cell(10, 10);
+        Cell secondCell = new Cell(10, 10);
+
+        assertEquals(firstCell, secondCell);
     }
 }
